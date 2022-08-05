@@ -109,54 +109,37 @@ struct HomeView: View {
     private func getViewForTab(tab: Tab) -> some View {
         switch tab {
         case .home:
-            VStack(spacing: 16) {
-                Image("ex1")
-                    .resizable()
-                    .scaledToFit()
-                VStack(spacing: 8) {
-                    Text("Learn about crypto")
-                        .font(.title3)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Image("ex2")
-                        .resizable()
-                        .scaledToFit()
-                        .cornerRadius(6)
-                        .shadow(color: .black.opacity(0.1), radius: 4)
-                }
-                VStack(spacing: 8) {
-                    Text("Promotions and news")
-                        .font(.title3)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Image("ex3")
-                        .resizable()
-                        .scaledToFit()
-                        .offset(x: 16)
-                }
-                VStack(spacing: 8) {
-                    Text("My Vouchers")
-                        .font(.title3)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Image("ex4")
-                        .resizable()
-                        .scaledToFit()
-                        .offset(x: 16)
-                }
+            VStack {
+                Text("Home View")
             }
+            .tag(tab.title)
             .padding(.horizontal)
             .padding(.bottom, 60)
             .padding(.bottom, getSafeArea().bottom == 0 ? 15 : getSafeArea().bottom)
         case .cards:
             VStack {
                 Text("Cards View")
-            }.tag(tab.title)
+            }
+            .tag(tab.title)
+            .padding(.horizontal)
+            .padding(.bottom, 60)
+            .padding(.bottom, getSafeArea().bottom == 0 ? 15 : getSafeArea().bottom)
         case .crypto:
             VStack {
                 Text("Crypto View")
-            }.tag(tab.title)
+            }
+            .tag(tab.title)
+            .padding(.horizontal)
+            .padding(.bottom, 60)
+            .padding(.bottom, getSafeArea().bottom == 0 ? 15 : getSafeArea().bottom)
         case .rewards:
             VStack {
-                Text("CART VIEW")
-            }.tag(tab.title)
+                Text("Rewards View")
+            }
+            .tag(tab.title)
+            .padding(.horizontal)
+            .padding(.bottom, 60)
+            .padding(.bottom, getSafeArea().bottom == 0 ? 15 : getSafeArea().bottom)
         }
     }
 }
